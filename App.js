@@ -1977,7 +1977,7 @@ app.delete("/api/family-info/:id/:id2", verifyEmployee, (req, res) => {
 
 //////////////////////////////////
 //////////////////////////WorkExperience workExperience
-app.get("/api/work-experience/:id", verifyHREmployee, (req, res) => {
+app.get("/api/finance-info/:id", verifyHREmployee, (req, res) => {
   console.log(req.params.id);
   // var employee = {};
   // {path: 'projects', populate: {path: 'portals'}}
@@ -2001,7 +2001,7 @@ app.get("/api/work-experience/:id", verifyHREmployee, (req, res) => {
     });
 });
 
-app.post("/api/work-experience/:id", verifyEmployee, (req, res) => {
+app.post("/api/finance-info/:id", verifyEmployee, (req, res) => {
   Joi.validate(req.body, WorkExperienceValidation, (err, result) => {
     if (err) {
       console.log(err);
@@ -2049,7 +2049,7 @@ app.post("/api/work-experience/:id", verifyEmployee, (req, res) => {
   });
 });
 
-app.put("/api/work-experience/:id", verifyEmployee, (req, res) => {
+app.put("/api/finance-info/:id", verifyEmployee, (req, res) => {
   Joi.validate(req.body, WorkExperienceValidation, (err, result) => {
     if (err) {
       console.log(err);
@@ -2081,7 +2081,7 @@ app.put("/api/work-experience/:id", verifyEmployee, (req, res) => {
   });
 });
 
-app.delete("/api/Work-experience/:id/:id2", verifyEmployee, (req, res) => {
+app.delete("/api/finance-info/:id/:id2", verifyEmployee, (req, res) => {
   Employee.findById({ _id: req.params.id }, function (err, employee) {
     if (err) {
       res.send("error");
